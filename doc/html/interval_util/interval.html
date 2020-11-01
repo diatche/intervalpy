@@ -1,0 +1,2394 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.9.1" />
+<title>interval_util.interval API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>interval_util.interval</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">import math
+import warnings
+from numbers import Number
+from collections.abc import Sequence
+from .util import *
+
+
+class Interval(Sequence):
+    &#34;&#34;&#34;
+    Specifies an open, closed or mixed interval.
+    &#34;&#34;&#34;
+
+    inf = math.inf
+
+    @property
+    def is_empty(self):
+        return self.end == self.start and (self.end_open or self.start_open)
+
+    @property
+    def length(self):
+        if self.is_empty:
+            return 0.0
+        return self.end - self.start
+
+    @property
+    def middle(self):
+        return (self.end + self.start) / 2
+
+    @property
+    def is_negative_infinite(self):
+        return self.start != self.end and math.isinf(self.start)
+
+    @property
+    def is_positive_infinite(self):
+        return self.start != self.end and math.isinf(self.end)
+
+    @property
+    def is_infinite(self):
+        return self.is_negative_infinite and self.is_positive_infinite
+
+    @property
+    def is_finite(self):
+        return not self.is_negative_infinite and not self.is_positive_infinite
+
+    @property
+    def is_point(self):
+        return not self.is_empty and self.start == self.end
+
+    def __init__(self, start, end, start_open=False, end_open=False):
+        if start is None and end is not None:
+            start = -math.inf
+        if end is None and start is not None:
+            end = math.inf
+
+        self.start = 0
+        self.end = 0
+        self.start_open = start_open
+        self.end_open = end_open
+
+        if end == start and (end_open or start_open):
+            # Empty interval
+            start = None
+            end = None
+        else:
+            assert isinstance(self.start, Number)
+            assert isinstance(self.end, Number)
+            assert self.end &gt;= self.start
+
+        self.start = start
+        self.end = end
+
+        if self.start != self.end:
+            if self.is_negative_infinite:
+                self.start_open = True
+            if self.is_positive_infinite:
+                self.end_open = True
+
+    def __bool__(self):
+        return not self.is_empty
+
+    def __len__(self):
+        return 2 if not self.is_empty else 0
+
+    def __getitem__(self, i):
+        return self.start if i == 0 else self.end
+
+    def __iter__(self):
+        if self.is_empty:
+            return iter([])
+        return iter([self.start, self.end])
+
+    def as_closed(self):
+        if self.is_empty:
+            return self
+        return Interval(self.start, self.end, start_open=False, end_open=False)
+
+    def as_open(self):
+        if self.is_empty:
+            return self
+        return Interval(self.start, self.end, start_open=True, end_open=True)
+
+    def as_closed_open(self):
+        if self.is_empty:
+            return self
+        return Interval(self.start, self.end, start_open=False, end_open=True)
+
+    def as_open_closed(self):
+        if self.is_empty:
+            return self
+        return Interval(self.start, self.end, start_open=True, end_open=False)
+
+    def map(self, f):
+        return Interval(f(self.start), f(self.end), start_open=self.start_open, end_open=self.end_open)
+
+    def round(self, method=round):
+        if self.is_empty:
+            return self
+        start = method(self.start) if not self.is_negative_infinite else self.start
+        end = method(self.end) if not self.is_positive_infinite else self.end
+        return Interval(start, end, start_open=self.start_open, end_open=self.end_open)
+
+    def contains(self, x, enforce_start=True, enforce_end=True):
+        if x is None or self.is_empty:
+            return False
+
+        # Special infinite cases
+        if self.is_negative_infinite and x == -math.inf:
+            return True
+        if self.is_positive_infinite and x == math.inf:
+            return True
+
+        if enforce_start:
+            if x &lt; self.start:
+                return False
+            elif self.start_open and x == self.start:
+                return False
+        if enforce_end:
+            if x &gt; self.end:
+                return False
+            elif self.start_open and x == self.start:
+                return False
+            elif self.end_open and x == self.end:
+                return False
+        return True
+
+    def index_range(self, values, key=None):
+        &#34;&#34;&#34;
+        Returns index range of values inside the interval
+        as a tuple `(start index, end index)`, where
+        the end index is exclusive.
+
+        If no values are inside the interval, (0, 0)
+        is returned.
+
+        If values are not numbers, a `key` callable
+        must be supplied, which returns a float.
+
+        Assumes `values` are sorted.
+        &#34;&#34;&#34;
+        if self.is_empty:
+            return 0, 0
+        values_len = len(values)
+        if values_len == 0 or self.is_infinite:
+            return 0, values_len
+
+        i0 = max(0, bisect_objects(values, self.start, key=key) - 1)
+        i1 = min(values_len, bisect_objects(values, self.end, key=key) + 1)
+
+        if key is None:
+            def key(x): return x
+
+        while i0 != i1:
+            x = key(values[i0])
+            if x &lt; self.start and not self.contains(x):
+                i0 += 1
+            else:
+                break
+        while i1 != 0 and i0 != i1:
+            x = key(values[i1 - 1])
+            if x &gt; self.end and not self.contains(x):
+                i1 -= 1
+            else:
+                break
+
+        return i0, i1
+
+    def filter(self, values, key=None):
+        &#34;&#34;&#34;
+        Returns values inside the interval.
+
+        If values are not numbers, a `key` callable
+        must be supplied, which returns a float.
+
+        Assumes `values` are sorted.
+        &#34;&#34;&#34;
+        i0, i1 = self.index_range(values, key=key)
+        return values[i0:i1]
+
+    def is_superset_of(self, interval):
+        if self.is_empty:
+            return False
+
+        u = self
+        v = Interval.parse(interval)
+
+        if v.is_empty:
+            return True
+
+        u0 = u.start
+        u1 = u.end
+        v0 = v.start
+        v1 = v.end
+
+        if u0 &gt; v0:
+            return False
+        elif u0 == v0 and u.start_open and not v.start_open:
+            return False
+
+        if u1 &lt; v1:
+            return False
+        elif u1 == v1 and u.end_open and not v.end_open:
+            return False
+
+        return True
+
+    def is_subset_of(self, interval):
+        return Interval.parse(interval).is_superset_of(self)
+
+    def equals(self, interval):
+        if interval is None:
+            return False
+        interval = Interval.parse(interval)
+        if self.is_empty and interval.is_empty:
+            return True
+        return self.start == interval.start and self.end == interval.end and self.start_open == interval.start_open and self.end_open == interval.end_open
+
+    def partition(self, xs, start_open=None, end_open=None):
+        &#34;&#34;&#34;
+        `xs` are assumed to be in ascending order.
+        &#34;&#34;&#34;
+        xs = list(filter(lambda x: self.contains(x), xs))
+        len_xs = len(xs)
+        if len_xs == 0:
+            return [self]
+        intervals = []
+        i_last = len_xs - 1
+        x_prev = None
+        if end_open is not None:
+            start_open = not end_open
+        elif start_open is not None:
+            end_open = not start_open
+        else:
+            start_open = False
+            end_open = True
+        for i in range(len_xs + 1):
+            if i &lt;= i_last:
+                x = xs[i]
+            if i == 0:
+                d_start = self.start
+                d_start_open = self.start_open
+            else:
+                d_start = x_prev
+                d_start_open = start_open
+            if i == len_xs:
+                d_end = self.end
+                d_end_open = self.end_open
+            else:
+                d_end = x
+                d_end_open = end_open
+            d = Interval(d_start, d_end, start_open=d_start_open,
+                       end_open=d_end_open)
+            if not d.is_empty:
+                intervals.append(d)
+            x_prev = x
+        return intervals
+
+    def copy(self):
+        return Interval(self.start, self.end, start_open=self.start_open, end_open=self.end_open)
+
+    def offset(self, offset):
+        return Interval(self.start + offset, self.end + offset, start_open=self.start_open, end_open=self.end_open)
+        
+    def get_gte(self):
+        &#34;&#34;&#34;
+        Return a interval from the start of this interval to positive infinity.
+        If this interval is empty, return an empty interval.
+        &#34;&#34;&#34;
+        if self.is_empty:
+            return empty
+        return Interval(self.start, math.inf, start_open=self.start_open, end_open=False)
+
+    def get_lte(self):
+        &#34;&#34;&#34;
+        Return a interval from the negative infinity to the end of this interval.
+        If this interval is empty, return an empty interval.
+        &#34;&#34;&#34;
+        if self.is_empty:
+            return empty
+        return Interval(-math.inf, self.end, start_open=False, end_open=self.end_open)
+
+    def get_gt(self):
+        &#34;&#34;&#34;
+        Return a interval from the end of this interval (non-inclusive) to positive infinity.
+        If this interval is empty, return an empty interval.
+        &#34;&#34;&#34;
+        if self.is_empty:
+            return empty
+        return Interval(self.end, math.inf, start_open=not self.end_open, end_open=False)
+
+    def get_lt(self):
+        &#34;&#34;&#34;
+        Return a interval from negative infinity to the start of this interval (non-inclusive).
+        If this interval is empty, return an empty interval.
+        &#34;&#34;&#34;
+        if self.is_empty:
+            return empty
+        return Interval(-math.inf, self.start, start_open=False, end_open=not self.start_open)
+        
+    def extended_to_positive_infinity(self):
+        &#34;&#34;&#34;
+        Return a interval from the start of this interval to positive infinity.
+        If this interval is empty, return an empty interval.
+        &#34;&#34;&#34;
+        warnings.warn(&#39;extended_to_positive_infinity() is deprecated, use get_gte() instead&#39;, DeprecationWarning)
+        return self.get_gte()
+
+    def extended_to_negative_infinity(self):
+        &#34;&#34;&#34;
+        Return a interval from the negative infinity to the end of this interval.
+        If this interval is empty, return an empty interval.
+        &#34;&#34;&#34;
+        warnings.warn(&#39;extended_to_negative_infinity() is deprecated, use get_lte() instead&#39;, DeprecationWarning)
+        return self.get_lte()
+
+    def rest_to_positive_infinity(self):
+        &#34;&#34;&#34;
+        Return a interval from the end of this interval (non-inclusive) to positive infinity.
+        If this interval is empty, return an empty interval.
+        &#34;&#34;&#34;
+        warnings.warn(&#39;rest_to_positive_infinity() is deprecated, use get_gt() instead&#39;, DeprecationWarning)
+        return self.get_gt()
+
+    def rest_to_negative_infinity(self):
+        &#34;&#34;&#34;
+        Return a interval from negative infinity to the start of this interval (non-inclusive).
+        If this interval is empty, return an empty interval.
+        &#34;&#34;&#34;
+        warnings.warn(&#39;rest_to_negative_infinity() is deprecated, use get_lt() instead&#39;, DeprecationWarning)
+        return self.get_lt()
+
+    def to_str(self, transformer=None, infinity_str=None, empty_str=None):
+        if self.is_empty:
+            return empty_str or &#39;()&#39;
+
+        start_str = &#39;(&#39; if self.start_open else &#39;[&#39;
+        end_str = &#39;)&#39; if self.end_open else &#39;]&#39;
+
+        start = self.start
+        end = self.end
+
+        if start == end:
+            x = start
+            if callable(transformer):
+                x = transformer(x)
+            return &#39;{}{}{}&#39;.format(start_str, x, end_str)
+
+        if self.is_negative_infinite:
+            start = &#39;-&#39; + (infinity_str or &#39;inf&#39;)
+        elif callable(transformer):
+            start = transformer(start)
+
+        if self.is_positive_infinite:
+            end = infinity_str or &#39;inf&#39;
+        elif callable(transformer):
+            end = transformer(end)
+
+        return &#39;{}{}, {}{}&#39;.format(start_str, start, end, end_str)
+
+    def pad(self, *amount, start=None, end=None):
+        default = amount[0] if len(amount) != 0 else None
+
+        if self.is_negative_infinite:
+            start = self.start
+        else:
+            start = self.start - (start or default or 0)
+
+        if self.is_positive_infinite:
+            end = self.end
+        else:
+            end = self.end + (end or default or 0)
+
+        return Interval(start, end, start_open=self.start_open, end_open=self.end_open)
+
+    @staticmethod
+    def parse(d, default_inf=False):
+        if d is None:
+            if default_inf:
+                return infinite
+            else:
+                raise Exception(f&#39;Unable to parse interval: {d}&#39;)
+        if type(d) == Interval or isinstance(d, Interval):
+            return d
+        elif isinstance(d, Number):
+            return Interval.point(d)
+        elif not bool(d):
+            return empty
+        elif isinstance(d, Sequence) and not isinstance(d, (str, bytes)):
+            if len(d) == 2:
+                return Interval(d[0], d[1])
+
+        # TODO: parse interval strings such as: `[0, 4.5)`, `[0, +inf)`
+        raise Exception(f&#39;Unable to parse interval: {d}&#39;)
+
+    @staticmethod
+    def parse_many(ds):
+        if type(ds) == Interval or isinstance(ds, Interval):
+            return [ds]
+        return list(map(Interval.parse, ds))
+
+    @staticmethod
+    def empty():
+        return empty
+
+    @staticmethod
+    def infinite():
+        return infinite
+
+    @staticmethod
+    def gt(x):
+        return Interval(x, math.inf, start_open=True, end_open=True)
+
+    @staticmethod
+    def gte(x):
+        return Interval(x, math.inf, start_open=False, end_open=True)
+
+    @staticmethod
+    def lt(x):
+        return Interval(-math.inf, x, start_open=True, end_open=True)
+
+    @staticmethod
+    def lte(x):
+        return Interval(-math.inf, x, start_open=True, end_open=False)
+
+    @staticmethod
+    def positive_infinite(x, open=False):
+        warnings.warn(&#39;positive_infinite() is deprecated, use gt() or gte() instead&#39;, DeprecationWarning)
+        return Interval(x, math.inf, start_open=open, end_open=True)
+
+    @staticmethod
+    def negative_infinite(x, open=False):
+        warnings.warn(&#39;negative_infinite() is deprecated, use lt() or lte() instead&#39;, DeprecationWarning)
+        return Interval(-math.inf, x, start_open=True, end_open=open)
+
+    @staticmethod
+    def point(x):
+        return Interval(x, x, start_open=False, end_open=False)
+
+    @staticmethod
+    def closed(start, end):
+        return Interval(start, end, start_open=False, end_open=False)
+
+    @staticmethod
+    def open(start, end):
+        return Interval(start, end, start_open=True, end_open=True)
+
+    @staticmethod
+    def closed_open(start, end):
+        return Interval(start, end, start_open=False, end_open=True)
+
+    @staticmethod
+    def open_closed(start, end):
+        return Interval(start, end, start_open=True, end_open=False)
+
+    @staticmethod
+    def union(intervals):
+        intervals = Interval.parse_many(intervals)
+        intervals = list(filter(lambda d: not d.is_empty, intervals))
+        d_len = len(intervals)
+        if d_len == 0:
+            return empty
+        elif d_len == 1:
+            return intervals[0]
+        start = min(intervals, key=lambda d: d.start).start
+        end = max(intervals, key=lambda d: d.end).end
+        # open if none are open
+        start_open = not any(map(lambda d: not d.start_open, filter(
+            lambda d: d.start == start, intervals)))
+        end_open = not any(map(lambda d: not d.end_open,
+                               filter(lambda d: d.end == end, intervals)))
+        return Interval(start, end, start_open=start_open, end_open=end_open)
+
+    @staticmethod
+    def intersection(intervals):
+        intervals = Interval.parse_many(intervals)
+        for d in intervals:
+            if d.is_empty:
+                # intersection of any set with an empty set is an empty set
+                return empty
+        d_len = len(intervals)
+        if d_len == 0:
+            return empty
+        elif d_len == 1:
+            return intervals[0]
+        start = max(intervals, key=lambda d: d.start).start
+        end = min(intervals, key=lambda d: d.end).end
+        if start &gt; end:
+            return empty
+        # open if any is open
+        start_open = any(map(lambda d: d.start_open, filter(
+            lambda d: d.start == start, intervals)))
+        end_open = any(map(lambda d: d.end_open, filter(
+            lambda d: d.end == end, intervals)))
+        return Interval(start, end, start_open=start_open, end_open=end_open)
+
+    def intersects(self, interval):
+        if self.is_empty:
+            return False
+
+        u = self
+        v = Interval.parse(interval)
+
+        if v.is_empty:
+            return False
+
+        u0 = u.start
+        u1 = u.end
+        v0 = v.start
+        v1 = v.end
+
+        if u0 &lt;= v0:
+            if u1 &lt; v0:
+                return False
+            elif u1 == v0:
+                return not u.end_open and not v.start_open
+            else:
+                return True
+
+        if u0 &gt;= v0:
+            if v1 &lt; u0:
+                return False
+            elif v1 == u0:
+                return not v.end_open and not u.start_open
+            else:
+                return True
+
+    def __repr__(self):
+        try:
+            return self.to_str()
+        except Exception as e:
+            return super().__repr__() + f&#39;({e})&#39;
+
+    def __radd__(self, other):
+        # sum() starts with 0 and then adds the first itme in the list to that.
+        # So if the first item doesn’t know how to add itself to 0, Python fails.
+        # But before it fails, Python tries to do a reversed add with the operators.
+        return Interval.union([self, other])
+
+    def __add__(self, other):
+        return Interval.union([self, other])
+
+    def __lt__(self, other):
+        if self.is_empty:
+            return False
+        other = Interval.parse(other)
+        if other.is_empty:
+            return True
+        if self.end &lt; other.start:
+            return True
+        elif self.end == other.start and (self.end_open or other.start_open):
+            return True
+        return False
+
+    def __le__(self, other):
+        if self.is_empty:
+            return False
+        other = Interval.parse(other)
+        if other.is_empty:
+            return True
+        if self.end &lt; other.end:
+            return True
+        elif self.end == other.end and not (not self.end_open and other.end_open):
+            return True
+        return False
+
+    def __eq__(self, other):
+        return self.equals(other)
+
+    def __ne__(self, other):
+        return not self.equals(other)
+
+    def __gt__(self, other):
+        if self.is_empty:
+            return False
+        other = Interval.parse(other)
+        if other.is_empty:
+            return True
+        if self.start &gt; other.end:
+            return True
+        elif self.end == other.start and (self.start_open or other.end_open):
+            return True
+        return False
+
+    def __ge__(self, other):
+        if self.is_empty:
+            return False
+        other = Interval.parse(other)
+        if other.is_empty:
+            return True
+        if self.start &gt; other.start:
+            return True
+        elif self.start == other.start and not (not self.start_open and other.start_open):
+            return True
+        return False
+
+    def __and__(self, other):
+        return Interval.intersection([self, other])
+
+    def __or__(self, other):
+        return Interval.union([self, other])
+
+
+empty = Interval(0, 0, start_open=True, end_open=True)
+infinite = Interval(-math.inf, math.inf, start_open=True, end_open=True)</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="interval_util.interval.Interval"><code class="flex name class">
+<span>class <span class="ident">Interval</span></span>
+<span>(</span><span>start, end, start_open=False, end_open=False)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Specifies an open, closed or mixed interval.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Interval(Sequence):
+    &#34;&#34;&#34;
+    Specifies an open, closed or mixed interval.
+    &#34;&#34;&#34;
+
+    inf = math.inf
+
+    @property
+    def is_empty(self):
+        return self.end == self.start and (self.end_open or self.start_open)
+
+    @property
+    def length(self):
+        if self.is_empty:
+            return 0.0
+        return self.end - self.start
+
+    @property
+    def middle(self):
+        return (self.end + self.start) / 2
+
+    @property
+    def is_negative_infinite(self):
+        return self.start != self.end and math.isinf(self.start)
+
+    @property
+    def is_positive_infinite(self):
+        return self.start != self.end and math.isinf(self.end)
+
+    @property
+    def is_infinite(self):
+        return self.is_negative_infinite and self.is_positive_infinite
+
+    @property
+    def is_finite(self):
+        return not self.is_negative_infinite and not self.is_positive_infinite
+
+    @property
+    def is_point(self):
+        return not self.is_empty and self.start == self.end
+
+    def __init__(self, start, end, start_open=False, end_open=False):
+        if start is None and end is not None:
+            start = -math.inf
+        if end is None and start is not None:
+            end = math.inf
+
+        self.start = 0
+        self.end = 0
+        self.start_open = start_open
+        self.end_open = end_open
+
+        if end == start and (end_open or start_open):
+            # Empty interval
+            start = None
+            end = None
+        else:
+            assert isinstance(self.start, Number)
+            assert isinstance(self.end, Number)
+            assert self.end &gt;= self.start
+
+        self.start = start
+        self.end = end
+
+        if self.start != self.end:
+            if self.is_negative_infinite:
+                self.start_open = True
+            if self.is_positive_infinite:
+                self.end_open = True
+
+    def __bool__(self):
+        return not self.is_empty
+
+    def __len__(self):
+        return 2 if not self.is_empty else 0
+
+    def __getitem__(self, i):
+        return self.start if i == 0 else self.end
+
+    def __iter__(self):
+        if self.is_empty:
+            return iter([])
+        return iter([self.start, self.end])
+
+    def as_closed(self):
+        if self.is_empty:
+            return self
+        return Interval(self.start, self.end, start_open=False, end_open=False)
+
+    def as_open(self):
+        if self.is_empty:
+            return self
+        return Interval(self.start, self.end, start_open=True, end_open=True)
+
+    def as_closed_open(self):
+        if self.is_empty:
+            return self
+        return Interval(self.start, self.end, start_open=False, end_open=True)
+
+    def as_open_closed(self):
+        if self.is_empty:
+            return self
+        return Interval(self.start, self.end, start_open=True, end_open=False)
+
+    def map(self, f):
+        return Interval(f(self.start), f(self.end), start_open=self.start_open, end_open=self.end_open)
+
+    def round(self, method=round):
+        if self.is_empty:
+            return self
+        start = method(self.start) if not self.is_negative_infinite else self.start
+        end = method(self.end) if not self.is_positive_infinite else self.end
+        return Interval(start, end, start_open=self.start_open, end_open=self.end_open)
+
+    def contains(self, x, enforce_start=True, enforce_end=True):
+        if x is None or self.is_empty:
+            return False
+
+        # Special infinite cases
+        if self.is_negative_infinite and x == -math.inf:
+            return True
+        if self.is_positive_infinite and x == math.inf:
+            return True
+
+        if enforce_start:
+            if x &lt; self.start:
+                return False
+            elif self.start_open and x == self.start:
+                return False
+        if enforce_end:
+            if x &gt; self.end:
+                return False
+            elif self.start_open and x == self.start:
+                return False
+            elif self.end_open and x == self.end:
+                return False
+        return True
+
+    def index_range(self, values, key=None):
+        &#34;&#34;&#34;
+        Returns index range of values inside the interval
+        as a tuple `(start index, end index)`, where
+        the end index is exclusive.
+
+        If no values are inside the interval, (0, 0)
+        is returned.
+
+        If values are not numbers, a `key` callable
+        must be supplied, which returns a float.
+
+        Assumes `values` are sorted.
+        &#34;&#34;&#34;
+        if self.is_empty:
+            return 0, 0
+        values_len = len(values)
+        if values_len == 0 or self.is_infinite:
+            return 0, values_len
+
+        i0 = max(0, bisect_objects(values, self.start, key=key) - 1)
+        i1 = min(values_len, bisect_objects(values, self.end, key=key) + 1)
+
+        if key is None:
+            def key(x): return x
+
+        while i0 != i1:
+            x = key(values[i0])
+            if x &lt; self.start and not self.contains(x):
+                i0 += 1
+            else:
+                break
+        while i1 != 0 and i0 != i1:
+            x = key(values[i1 - 1])
+            if x &gt; self.end and not self.contains(x):
+                i1 -= 1
+            else:
+                break
+
+        return i0, i1
+
+    def filter(self, values, key=None):
+        &#34;&#34;&#34;
+        Returns values inside the interval.
+
+        If values are not numbers, a `key` callable
+        must be supplied, which returns a float.
+
+        Assumes `values` are sorted.
+        &#34;&#34;&#34;
+        i0, i1 = self.index_range(values, key=key)
+        return values[i0:i1]
+
+    def is_superset_of(self, interval):
+        if self.is_empty:
+            return False
+
+        u = self
+        v = Interval.parse(interval)
+
+        if v.is_empty:
+            return True
+
+        u0 = u.start
+        u1 = u.end
+        v0 = v.start
+        v1 = v.end
+
+        if u0 &gt; v0:
+            return False
+        elif u0 == v0 and u.start_open and not v.start_open:
+            return False
+
+        if u1 &lt; v1:
+            return False
+        elif u1 == v1 and u.end_open and not v.end_open:
+            return False
+
+        return True
+
+    def is_subset_of(self, interval):
+        return Interval.parse(interval).is_superset_of(self)
+
+    def equals(self, interval):
+        if interval is None:
+            return False
+        interval = Interval.parse(interval)
+        if self.is_empty and interval.is_empty:
+            return True
+        return self.start == interval.start and self.end == interval.end and self.start_open == interval.start_open and self.end_open == interval.end_open
+
+    def partition(self, xs, start_open=None, end_open=None):
+        &#34;&#34;&#34;
+        `xs` are assumed to be in ascending order.
+        &#34;&#34;&#34;
+        xs = list(filter(lambda x: self.contains(x), xs))
+        len_xs = len(xs)
+        if len_xs == 0:
+            return [self]
+        intervals = []
+        i_last = len_xs - 1
+        x_prev = None
+        if end_open is not None:
+            start_open = not end_open
+        elif start_open is not None:
+            end_open = not start_open
+        else:
+            start_open = False
+            end_open = True
+        for i in range(len_xs + 1):
+            if i &lt;= i_last:
+                x = xs[i]
+            if i == 0:
+                d_start = self.start
+                d_start_open = self.start_open
+            else:
+                d_start = x_prev
+                d_start_open = start_open
+            if i == len_xs:
+                d_end = self.end
+                d_end_open = self.end_open
+            else:
+                d_end = x
+                d_end_open = end_open
+            d = Interval(d_start, d_end, start_open=d_start_open,
+                       end_open=d_end_open)
+            if not d.is_empty:
+                intervals.append(d)
+            x_prev = x
+        return intervals
+
+    def copy(self):
+        return Interval(self.start, self.end, start_open=self.start_open, end_open=self.end_open)
+
+    def offset(self, offset):
+        return Interval(self.start + offset, self.end + offset, start_open=self.start_open, end_open=self.end_open)
+        
+    def get_gte(self):
+        &#34;&#34;&#34;
+        Return a interval from the start of this interval to positive infinity.
+        If this interval is empty, return an empty interval.
+        &#34;&#34;&#34;
+        if self.is_empty:
+            return empty
+        return Interval(self.start, math.inf, start_open=self.start_open, end_open=False)
+
+    def get_lte(self):
+        &#34;&#34;&#34;
+        Return a interval from the negative infinity to the end of this interval.
+        If this interval is empty, return an empty interval.
+        &#34;&#34;&#34;
+        if self.is_empty:
+            return empty
+        return Interval(-math.inf, self.end, start_open=False, end_open=self.end_open)
+
+    def get_gt(self):
+        &#34;&#34;&#34;
+        Return a interval from the end of this interval (non-inclusive) to positive infinity.
+        If this interval is empty, return an empty interval.
+        &#34;&#34;&#34;
+        if self.is_empty:
+            return empty
+        return Interval(self.end, math.inf, start_open=not self.end_open, end_open=False)
+
+    def get_lt(self):
+        &#34;&#34;&#34;
+        Return a interval from negative infinity to the start of this interval (non-inclusive).
+        If this interval is empty, return an empty interval.
+        &#34;&#34;&#34;
+        if self.is_empty:
+            return empty
+        return Interval(-math.inf, self.start, start_open=False, end_open=not self.start_open)
+        
+    def extended_to_positive_infinity(self):
+        &#34;&#34;&#34;
+        Return a interval from the start of this interval to positive infinity.
+        If this interval is empty, return an empty interval.
+        &#34;&#34;&#34;
+        warnings.warn(&#39;extended_to_positive_infinity() is deprecated, use get_gte() instead&#39;, DeprecationWarning)
+        return self.get_gte()
+
+    def extended_to_negative_infinity(self):
+        &#34;&#34;&#34;
+        Return a interval from the negative infinity to the end of this interval.
+        If this interval is empty, return an empty interval.
+        &#34;&#34;&#34;
+        warnings.warn(&#39;extended_to_negative_infinity() is deprecated, use get_lte() instead&#39;, DeprecationWarning)
+        return self.get_lte()
+
+    def rest_to_positive_infinity(self):
+        &#34;&#34;&#34;
+        Return a interval from the end of this interval (non-inclusive) to positive infinity.
+        If this interval is empty, return an empty interval.
+        &#34;&#34;&#34;
+        warnings.warn(&#39;rest_to_positive_infinity() is deprecated, use get_gt() instead&#39;, DeprecationWarning)
+        return self.get_gt()
+
+    def rest_to_negative_infinity(self):
+        &#34;&#34;&#34;
+        Return a interval from negative infinity to the start of this interval (non-inclusive).
+        If this interval is empty, return an empty interval.
+        &#34;&#34;&#34;
+        warnings.warn(&#39;rest_to_negative_infinity() is deprecated, use get_lt() instead&#39;, DeprecationWarning)
+        return self.get_lt()
+
+    def to_str(self, transformer=None, infinity_str=None, empty_str=None):
+        if self.is_empty:
+            return empty_str or &#39;()&#39;
+
+        start_str = &#39;(&#39; if self.start_open else &#39;[&#39;
+        end_str = &#39;)&#39; if self.end_open else &#39;]&#39;
+
+        start = self.start
+        end = self.end
+
+        if start == end:
+            x = start
+            if callable(transformer):
+                x = transformer(x)
+            return &#39;{}{}{}&#39;.format(start_str, x, end_str)
+
+        if self.is_negative_infinite:
+            start = &#39;-&#39; + (infinity_str or &#39;inf&#39;)
+        elif callable(transformer):
+            start = transformer(start)
+
+        if self.is_positive_infinite:
+            end = infinity_str or &#39;inf&#39;
+        elif callable(transformer):
+            end = transformer(end)
+
+        return &#39;{}{}, {}{}&#39;.format(start_str, start, end, end_str)
+
+    def pad(self, *amount, start=None, end=None):
+        default = amount[0] if len(amount) != 0 else None
+
+        if self.is_negative_infinite:
+            start = self.start
+        else:
+            start = self.start - (start or default or 0)
+
+        if self.is_positive_infinite:
+            end = self.end
+        else:
+            end = self.end + (end or default or 0)
+
+        return Interval(start, end, start_open=self.start_open, end_open=self.end_open)
+
+    @staticmethod
+    def parse(d, default_inf=False):
+        if d is None:
+            if default_inf:
+                return infinite
+            else:
+                raise Exception(f&#39;Unable to parse interval: {d}&#39;)
+        if type(d) == Interval or isinstance(d, Interval):
+            return d
+        elif isinstance(d, Number):
+            return Interval.point(d)
+        elif not bool(d):
+            return empty
+        elif isinstance(d, Sequence) and not isinstance(d, (str, bytes)):
+            if len(d) == 2:
+                return Interval(d[0], d[1])
+
+        # TODO: parse interval strings such as: `[0, 4.5)`, `[0, +inf)`
+        raise Exception(f&#39;Unable to parse interval: {d}&#39;)
+
+    @staticmethod
+    def parse_many(ds):
+        if type(ds) == Interval or isinstance(ds, Interval):
+            return [ds]
+        return list(map(Interval.parse, ds))
+
+    @staticmethod
+    def empty():
+        return empty
+
+    @staticmethod
+    def infinite():
+        return infinite
+
+    @staticmethod
+    def gt(x):
+        return Interval(x, math.inf, start_open=True, end_open=True)
+
+    @staticmethod
+    def gte(x):
+        return Interval(x, math.inf, start_open=False, end_open=True)
+
+    @staticmethod
+    def lt(x):
+        return Interval(-math.inf, x, start_open=True, end_open=True)
+
+    @staticmethod
+    def lte(x):
+        return Interval(-math.inf, x, start_open=True, end_open=False)
+
+    @staticmethod
+    def positive_infinite(x, open=False):
+        warnings.warn(&#39;positive_infinite() is deprecated, use gt() or gte() instead&#39;, DeprecationWarning)
+        return Interval(x, math.inf, start_open=open, end_open=True)
+
+    @staticmethod
+    def negative_infinite(x, open=False):
+        warnings.warn(&#39;negative_infinite() is deprecated, use lt() or lte() instead&#39;, DeprecationWarning)
+        return Interval(-math.inf, x, start_open=True, end_open=open)
+
+    @staticmethod
+    def point(x):
+        return Interval(x, x, start_open=False, end_open=False)
+
+    @staticmethod
+    def closed(start, end):
+        return Interval(start, end, start_open=False, end_open=False)
+
+    @staticmethod
+    def open(start, end):
+        return Interval(start, end, start_open=True, end_open=True)
+
+    @staticmethod
+    def closed_open(start, end):
+        return Interval(start, end, start_open=False, end_open=True)
+
+    @staticmethod
+    def open_closed(start, end):
+        return Interval(start, end, start_open=True, end_open=False)
+
+    @staticmethod
+    def union(intervals):
+        intervals = Interval.parse_many(intervals)
+        intervals = list(filter(lambda d: not d.is_empty, intervals))
+        d_len = len(intervals)
+        if d_len == 0:
+            return empty
+        elif d_len == 1:
+            return intervals[0]
+        start = min(intervals, key=lambda d: d.start).start
+        end = max(intervals, key=lambda d: d.end).end
+        # open if none are open
+        start_open = not any(map(lambda d: not d.start_open, filter(
+            lambda d: d.start == start, intervals)))
+        end_open = not any(map(lambda d: not d.end_open,
+                               filter(lambda d: d.end == end, intervals)))
+        return Interval(start, end, start_open=start_open, end_open=end_open)
+
+    @staticmethod
+    def intersection(intervals):
+        intervals = Interval.parse_many(intervals)
+        for d in intervals:
+            if d.is_empty:
+                # intersection of any set with an empty set is an empty set
+                return empty
+        d_len = len(intervals)
+        if d_len == 0:
+            return empty
+        elif d_len == 1:
+            return intervals[0]
+        start = max(intervals, key=lambda d: d.start).start
+        end = min(intervals, key=lambda d: d.end).end
+        if start &gt; end:
+            return empty
+        # open if any is open
+        start_open = any(map(lambda d: d.start_open, filter(
+            lambda d: d.start == start, intervals)))
+        end_open = any(map(lambda d: d.end_open, filter(
+            lambda d: d.end == end, intervals)))
+        return Interval(start, end, start_open=start_open, end_open=end_open)
+
+    def intersects(self, interval):
+        if self.is_empty:
+            return False
+
+        u = self
+        v = Interval.parse(interval)
+
+        if v.is_empty:
+            return False
+
+        u0 = u.start
+        u1 = u.end
+        v0 = v.start
+        v1 = v.end
+
+        if u0 &lt;= v0:
+            if u1 &lt; v0:
+                return False
+            elif u1 == v0:
+                return not u.end_open and not v.start_open
+            else:
+                return True
+
+        if u0 &gt;= v0:
+            if v1 &lt; u0:
+                return False
+            elif v1 == u0:
+                return not v.end_open and not u.start_open
+            else:
+                return True
+
+    def __repr__(self):
+        try:
+            return self.to_str()
+        except Exception as e:
+            return super().__repr__() + f&#39;({e})&#39;
+
+    def __radd__(self, other):
+        # sum() starts with 0 and then adds the first itme in the list to that.
+        # So if the first item doesn’t know how to add itself to 0, Python fails.
+        # But before it fails, Python tries to do a reversed add with the operators.
+        return Interval.union([self, other])
+
+    def __add__(self, other):
+        return Interval.union([self, other])
+
+    def __lt__(self, other):
+        if self.is_empty:
+            return False
+        other = Interval.parse(other)
+        if other.is_empty:
+            return True
+        if self.end &lt; other.start:
+            return True
+        elif self.end == other.start and (self.end_open or other.start_open):
+            return True
+        return False
+
+    def __le__(self, other):
+        if self.is_empty:
+            return False
+        other = Interval.parse(other)
+        if other.is_empty:
+            return True
+        if self.end &lt; other.end:
+            return True
+        elif self.end == other.end and not (not self.end_open and other.end_open):
+            return True
+        return False
+
+    def __eq__(self, other):
+        return self.equals(other)
+
+    def __ne__(self, other):
+        return not self.equals(other)
+
+    def __gt__(self, other):
+        if self.is_empty:
+            return False
+        other = Interval.parse(other)
+        if other.is_empty:
+            return True
+        if self.start &gt; other.end:
+            return True
+        elif self.end == other.start and (self.start_open or other.end_open):
+            return True
+        return False
+
+    def __ge__(self, other):
+        if self.is_empty:
+            return False
+        other = Interval.parse(other)
+        if other.is_empty:
+            return True
+        if self.start &gt; other.start:
+            return True
+        elif self.start == other.start and not (not self.start_open and other.start_open):
+            return True
+        return False
+
+    def __and__(self, other):
+        return Interval.intersection([self, other])
+
+    def __or__(self, other):
+        return Interval.union([self, other])</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>collections.abc.Sequence</li>
+<li>collections.abc.Reversible</li>
+<li>collections.abc.Collection</li>
+<li>collections.abc.Sized</li>
+<li>collections.abc.Iterable</li>
+<li>collections.abc.Container</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="interval_util.interval.Interval.inf"><code class="name">var <span class="ident">inf</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Static methods</h3>
+<dl>
+<dt id="interval_util.interval.Interval.closed"><code class="name flex">
+<span>def <span class="ident">closed</span></span>(<span>start, end)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@staticmethod
+def closed(start, end):
+    return Interval(start, end, start_open=False, end_open=False)</code></pre>
+</details>
+</dd>
+<dt id="interval_util.interval.Interval.closed_open"><code class="name flex">
+<span>def <span class="ident">closed_open</span></span>(<span>start, end)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@staticmethod
+def closed_open(start, end):
+    return Interval(start, end, start_open=False, end_open=True)</code></pre>
+</details>
+</dd>
+<dt id="interval_util.interval.Interval.empty"><code class="name flex">
+<span>def <span class="ident">empty</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@staticmethod
+def empty():
+    return empty</code></pre>
+</details>
+</dd>
+<dt id="interval_util.interval.Interval.gt"><code class="name flex">
+<span>def <span class="ident">gt</span></span>(<span>x)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@staticmethod
+def gt(x):
+    return Interval(x, math.inf, start_open=True, end_open=True)</code></pre>
+</details>
+</dd>
+<dt id="interval_util.interval.Interval.gte"><code class="name flex">
+<span>def <span class="ident">gte</span></span>(<span>x)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@staticmethod
+def gte(x):
+    return Interval(x, math.inf, start_open=False, end_open=True)</code></pre>
+</details>
+</dd>
+<dt id="interval_util.interval.Interval.infinite"><code class="name flex">
+<span>def <span class="ident">infinite</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@staticmethod
+def infinite():
+    return infinite</code></pre>
+</details>
+</dd>
+<dt id="interval_util.interval.Interval.intersection"><code class="name flex">
+<span>def <span class="ident">intersection</span></span>(<span>intervals)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@staticmethod
+def intersection(intervals):
+    intervals = Interval.parse_many(intervals)
+    for d in intervals:
+        if d.is_empty:
+            # intersection of any set with an empty set is an empty set
+            return empty
+    d_len = len(intervals)
+    if d_len == 0:
+        return empty
+    elif d_len == 1:
+        return intervals[0]
+    start = max(intervals, key=lambda d: d.start).start
+    end = min(intervals, key=lambda d: d.end).end
+    if start &gt; end:
+        return empty
+    # open if any is open
+    start_open = any(map(lambda d: d.start_open, filter(
+        lambda d: d.start == start, intervals)))
+    end_open = any(map(lambda d: d.end_open, filter(
+        lambda d: d.end == end, intervals)))
+    return Interval(start, end, start_open=start_open, end_open=end_open)</code></pre>
+</details>
+</dd>
+<dt id="interval_util.interval.Interval.lt"><code class="name flex">
+<span>def <span class="ident">lt</span></span>(<span>x)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@staticmethod
+def lt(x):
+    return Interval(-math.inf, x, start_open=True, end_open=True)</code></pre>
+</details>
+</dd>
+<dt id="interval_util.interval.Interval.lte"><code class="name flex">
+<span>def <span class="ident">lte</span></span>(<span>x)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@staticmethod
+def lte(x):
+    return Interval(-math.inf, x, start_open=True, end_open=False)</code></pre>
+</details>
+</dd>
+<dt id="interval_util.interval.Interval.negative_infinite"><code class="name flex">
+<span>def <span class="ident">negative_infinite</span></span>(<span>x, open=False)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@staticmethod
+def negative_infinite(x, open=False):
+    warnings.warn(&#39;negative_infinite() is deprecated, use lt() or lte() instead&#39;, DeprecationWarning)
+    return Interval(-math.inf, x, start_open=True, end_open=open)</code></pre>
+</details>
+</dd>
+<dt id="interval_util.interval.Interval.open"><code class="name flex">
+<span>def <span class="ident">open</span></span>(<span>start, end)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@staticmethod
+def open(start, end):
+    return Interval(start, end, start_open=True, end_open=True)</code></pre>
+</details>
+</dd>
+<dt id="interval_util.interval.Interval.open_closed"><code class="name flex">
+<span>def <span class="ident">open_closed</span></span>(<span>start, end)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@staticmethod
+def open_closed(start, end):
+    return Interval(start, end, start_open=True, end_open=False)</code></pre>
+</details>
+</dd>
+<dt id="interval_util.interval.Interval.parse"><code class="name flex">
+<span>def <span class="ident">parse</span></span>(<span>d, default_inf=False)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@staticmethod
+def parse(d, default_inf=False):
+    if d is None:
+        if default_inf:
+            return infinite
+        else:
+            raise Exception(f&#39;Unable to parse interval: {d}&#39;)
+    if type(d) == Interval or isinstance(d, Interval):
+        return d
+    elif isinstance(d, Number):
+        return Interval.point(d)
+    elif not bool(d):
+        return empty
+    elif isinstance(d, Sequence) and not isinstance(d, (str, bytes)):
+        if len(d) == 2:
+            return Interval(d[0], d[1])
+
+    # TODO: parse interval strings such as: `[0, 4.5)`, `[0, +inf)`
+    raise Exception(f&#39;Unable to parse interval: {d}&#39;)</code></pre>
+</details>
+</dd>
+<dt id="interval_util.interval.Interval.parse_many"><code class="name flex">
+<span>def <span class="ident">parse_many</span></span>(<span>ds)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@staticmethod
+def parse_many(ds):
+    if type(ds) == Interval or isinstance(ds, Interval):
+        return [ds]
+    return list(map(Interval.parse, ds))</code></pre>
+</details>
+</dd>
+<dt id="interval_util.interval.Interval.point"><code class="name flex">
+<span>def <span class="ident">point</span></span>(<span>x)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@staticmethod
+def point(x):
+    return Interval(x, x, start_open=False, end_open=False)</code></pre>
+</details>
+</dd>
+<dt id="interval_util.interval.Interval.positive_infinite"><code class="name flex">
+<span>def <span class="ident">positive_infinite</span></span>(<span>x, open=False)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@staticmethod
+def positive_infinite(x, open=False):
+    warnings.warn(&#39;positive_infinite() is deprecated, use gt() or gte() instead&#39;, DeprecationWarning)
+    return Interval(x, math.inf, start_open=open, end_open=True)</code></pre>
+</details>
+</dd>
+<dt id="interval_util.interval.Interval.union"><code class="name flex">
+<span>def <span class="ident">union</span></span>(<span>intervals)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@staticmethod
+def union(intervals):
+    intervals = Interval.parse_many(intervals)
+    intervals = list(filter(lambda d: not d.is_empty, intervals))
+    d_len = len(intervals)
+    if d_len == 0:
+        return empty
+    elif d_len == 1:
+        return intervals[0]
+    start = min(intervals, key=lambda d: d.start).start
+    end = max(intervals, key=lambda d: d.end).end
+    # open if none are open
+    start_open = not any(map(lambda d: not d.start_open, filter(
+        lambda d: d.start == start, intervals)))
+    end_open = not any(map(lambda d: not d.end_open,
+                           filter(lambda d: d.end == end, intervals)))
+    return Interval(start, end, start_open=start_open, end_open=end_open)</code></pre>
+</details>
+</dd>
+</dl>
+<h3>Instance variables</h3>
+<dl>
+<dt id="interval_util.interval.Interval.is_empty"><code class="name">var <span class="ident">is_empty</span></code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def is_empty(self):
+    return self.end == self.start and (self.end_open or self.start_open)</code></pre>
+</details>
+</dd>
+<dt id="interval_util.interval.Interval.is_finite"><code class="name">var <span class="ident">is_finite</span></code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def is_finite(self):
+    return not self.is_negative_infinite and not self.is_positive_infinite</code></pre>
+</details>
+</dd>
+<dt id="interval_util.interval.Interval.is_infinite"><code class="name">var <span class="ident">is_infinite</span></code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def is_infinite(self):
+    return self.is_negative_infinite and self.is_positive_infinite</code></pre>
+</details>
+</dd>
+<dt id="interval_util.interval.Interval.is_negative_infinite"><code class="name">var <span class="ident">is_negative_infinite</span></code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def is_negative_infinite(self):
+    return self.start != self.end and math.isinf(self.start)</code></pre>
+</details>
+</dd>
+<dt id="interval_util.interval.Interval.is_point"><code class="name">var <span class="ident">is_point</span></code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def is_point(self):
+    return not self.is_empty and self.start == self.end</code></pre>
+</details>
+</dd>
+<dt id="interval_util.interval.Interval.is_positive_infinite"><code class="name">var <span class="ident">is_positive_infinite</span></code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def is_positive_infinite(self):
+    return self.start != self.end and math.isinf(self.end)</code></pre>
+</details>
+</dd>
+<dt id="interval_util.interval.Interval.length"><code class="name">var <span class="ident">length</span></code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def length(self):
+    if self.is_empty:
+        return 0.0
+    return self.end - self.start</code></pre>
+</details>
+</dd>
+<dt id="interval_util.interval.Interval.middle"><code class="name">var <span class="ident">middle</span></code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def middle(self):
+    return (self.end + self.start) / 2</code></pre>
+</details>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="interval_util.interval.Interval.as_closed"><code class="name flex">
+<span>def <span class="ident">as_closed</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def as_closed(self):
+    if self.is_empty:
+        return self
+    return Interval(self.start, self.end, start_open=False, end_open=False)</code></pre>
+</details>
+</dd>
+<dt id="interval_util.interval.Interval.as_closed_open"><code class="name flex">
+<span>def <span class="ident">as_closed_open</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def as_closed_open(self):
+    if self.is_empty:
+        return self
+    return Interval(self.start, self.end, start_open=False, end_open=True)</code></pre>
+</details>
+</dd>
+<dt id="interval_util.interval.Interval.as_open"><code class="name flex">
+<span>def <span class="ident">as_open</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def as_open(self):
+    if self.is_empty:
+        return self
+    return Interval(self.start, self.end, start_open=True, end_open=True)</code></pre>
+</details>
+</dd>
+<dt id="interval_util.interval.Interval.as_open_closed"><code class="name flex">
+<span>def <span class="ident">as_open_closed</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def as_open_closed(self):
+    if self.is_empty:
+        return self
+    return Interval(self.start, self.end, start_open=True, end_open=False)</code></pre>
+</details>
+</dd>
+<dt id="interval_util.interval.Interval.contains"><code class="name flex">
+<span>def <span class="ident">contains</span></span>(<span>self, x, enforce_start=True, enforce_end=True)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def contains(self, x, enforce_start=True, enforce_end=True):
+    if x is None or self.is_empty:
+        return False
+
+    # Special infinite cases
+    if self.is_negative_infinite and x == -math.inf:
+        return True
+    if self.is_positive_infinite and x == math.inf:
+        return True
+
+    if enforce_start:
+        if x &lt; self.start:
+            return False
+        elif self.start_open and x == self.start:
+            return False
+    if enforce_end:
+        if x &gt; self.end:
+            return False
+        elif self.start_open and x == self.start:
+            return False
+        elif self.end_open and x == self.end:
+            return False
+    return True</code></pre>
+</details>
+</dd>
+<dt id="interval_util.interval.Interval.copy"><code class="name flex">
+<span>def <span class="ident">copy</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def copy(self):
+    return Interval(self.start, self.end, start_open=self.start_open, end_open=self.end_open)</code></pre>
+</details>
+</dd>
+<dt id="interval_util.interval.Interval.equals"><code class="name flex">
+<span>def <span class="ident">equals</span></span>(<span>self, interval)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def equals(self, interval):
+    if interval is None:
+        return False
+    interval = Interval.parse(interval)
+    if self.is_empty and interval.is_empty:
+        return True
+    return self.start == interval.start and self.end == interval.end and self.start_open == interval.start_open and self.end_open == interval.end_open</code></pre>
+</details>
+</dd>
+<dt id="interval_util.interval.Interval.extended_to_negative_infinity"><code class="name flex">
+<span>def <span class="ident">extended_to_negative_infinity</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Return a interval from the negative infinity to the end of this interval.
+If this interval is empty, return an empty interval.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def extended_to_negative_infinity(self):
+    &#34;&#34;&#34;
+    Return a interval from the negative infinity to the end of this interval.
+    If this interval is empty, return an empty interval.
+    &#34;&#34;&#34;
+    warnings.warn(&#39;extended_to_negative_infinity() is deprecated, use get_lte() instead&#39;, DeprecationWarning)
+    return self.get_lte()</code></pre>
+</details>
+</dd>
+<dt id="interval_util.interval.Interval.extended_to_positive_infinity"><code class="name flex">
+<span>def <span class="ident">extended_to_positive_infinity</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Return a interval from the start of this interval to positive infinity.
+If this interval is empty, return an empty interval.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def extended_to_positive_infinity(self):
+    &#34;&#34;&#34;
+    Return a interval from the start of this interval to positive infinity.
+    If this interval is empty, return an empty interval.
+    &#34;&#34;&#34;
+    warnings.warn(&#39;extended_to_positive_infinity() is deprecated, use get_gte() instead&#39;, DeprecationWarning)
+    return self.get_gte()</code></pre>
+</details>
+</dd>
+<dt id="interval_util.interval.Interval.filter"><code class="name flex">
+<span>def <span class="ident">filter</span></span>(<span>self, values, key=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns values inside the interval.</p>
+<p>If values are not numbers, a <code>key</code> callable
+must be supplied, which returns a float.</p>
+<p>Assumes <code>values</code> are sorted.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def filter(self, values, key=None):
+    &#34;&#34;&#34;
+    Returns values inside the interval.
+
+    If values are not numbers, a `key` callable
+    must be supplied, which returns a float.
+
+    Assumes `values` are sorted.
+    &#34;&#34;&#34;
+    i0, i1 = self.index_range(values, key=key)
+    return values[i0:i1]</code></pre>
+</details>
+</dd>
+<dt id="interval_util.interval.Interval.get_gt"><code class="name flex">
+<span>def <span class="ident">get_gt</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Return a interval from the end of this interval (non-inclusive) to positive infinity.
+If this interval is empty, return an empty interval.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_gt(self):
+    &#34;&#34;&#34;
+    Return a interval from the end of this interval (non-inclusive) to positive infinity.
+    If this interval is empty, return an empty interval.
+    &#34;&#34;&#34;
+    if self.is_empty:
+        return empty
+    return Interval(self.end, math.inf, start_open=not self.end_open, end_open=False)</code></pre>
+</details>
+</dd>
+<dt id="interval_util.interval.Interval.get_gte"><code class="name flex">
+<span>def <span class="ident">get_gte</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Return a interval from the start of this interval to positive infinity.
+If this interval is empty, return an empty interval.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_gte(self):
+    &#34;&#34;&#34;
+    Return a interval from the start of this interval to positive infinity.
+    If this interval is empty, return an empty interval.
+    &#34;&#34;&#34;
+    if self.is_empty:
+        return empty
+    return Interval(self.start, math.inf, start_open=self.start_open, end_open=False)</code></pre>
+</details>
+</dd>
+<dt id="interval_util.interval.Interval.get_lt"><code class="name flex">
+<span>def <span class="ident">get_lt</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Return a interval from negative infinity to the start of this interval (non-inclusive).
+If this interval is empty, return an empty interval.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_lt(self):
+    &#34;&#34;&#34;
+    Return a interval from negative infinity to the start of this interval (non-inclusive).
+    If this interval is empty, return an empty interval.
+    &#34;&#34;&#34;
+    if self.is_empty:
+        return empty
+    return Interval(-math.inf, self.start, start_open=False, end_open=not self.start_open)</code></pre>
+</details>
+</dd>
+<dt id="interval_util.interval.Interval.get_lte"><code class="name flex">
+<span>def <span class="ident">get_lte</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Return a interval from the negative infinity to the end of this interval.
+If this interval is empty, return an empty interval.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_lte(self):
+    &#34;&#34;&#34;
+    Return a interval from the negative infinity to the end of this interval.
+    If this interval is empty, return an empty interval.
+    &#34;&#34;&#34;
+    if self.is_empty:
+        return empty
+    return Interval(-math.inf, self.end, start_open=False, end_open=self.end_open)</code></pre>
+</details>
+</dd>
+<dt id="interval_util.interval.Interval.index_range"><code class="name flex">
+<span>def <span class="ident">index_range</span></span>(<span>self, values, key=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns index range of values inside the interval
+as a tuple <code>(start index, end index)</code>, where
+the end index is exclusive.</p>
+<p>If no values are inside the interval, (0, 0)
+is returned.</p>
+<p>If values are not numbers, a <code>key</code> callable
+must be supplied, which returns a float.</p>
+<p>Assumes <code>values</code> are sorted.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def index_range(self, values, key=None):
+    &#34;&#34;&#34;
+    Returns index range of values inside the interval
+    as a tuple `(start index, end index)`, where
+    the end index is exclusive.
+
+    If no values are inside the interval, (0, 0)
+    is returned.
+
+    If values are not numbers, a `key` callable
+    must be supplied, which returns a float.
+
+    Assumes `values` are sorted.
+    &#34;&#34;&#34;
+    if self.is_empty:
+        return 0, 0
+    values_len = len(values)
+    if values_len == 0 or self.is_infinite:
+        return 0, values_len
+
+    i0 = max(0, bisect_objects(values, self.start, key=key) - 1)
+    i1 = min(values_len, bisect_objects(values, self.end, key=key) + 1)
+
+    if key is None:
+        def key(x): return x
+
+    while i0 != i1:
+        x = key(values[i0])
+        if x &lt; self.start and not self.contains(x):
+            i0 += 1
+        else:
+            break
+    while i1 != 0 and i0 != i1:
+        x = key(values[i1 - 1])
+        if x &gt; self.end and not self.contains(x):
+            i1 -= 1
+        else:
+            break
+
+    return i0, i1</code></pre>
+</details>
+</dd>
+<dt id="interval_util.interval.Interval.intersects"><code class="name flex">
+<span>def <span class="ident">intersects</span></span>(<span>self, interval)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def intersects(self, interval):
+    if self.is_empty:
+        return False
+
+    u = self
+    v = Interval.parse(interval)
+
+    if v.is_empty:
+        return False
+
+    u0 = u.start
+    u1 = u.end
+    v0 = v.start
+    v1 = v.end
+
+    if u0 &lt;= v0:
+        if u1 &lt; v0:
+            return False
+        elif u1 == v0:
+            return not u.end_open and not v.start_open
+        else:
+            return True
+
+    if u0 &gt;= v0:
+        if v1 &lt; u0:
+            return False
+        elif v1 == u0:
+            return not v.end_open and not u.start_open
+        else:
+            return True</code></pre>
+</details>
+</dd>
+<dt id="interval_util.interval.Interval.is_subset_of"><code class="name flex">
+<span>def <span class="ident">is_subset_of</span></span>(<span>self, interval)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def is_subset_of(self, interval):
+    return Interval.parse(interval).is_superset_of(self)</code></pre>
+</details>
+</dd>
+<dt id="interval_util.interval.Interval.is_superset_of"><code class="name flex">
+<span>def <span class="ident">is_superset_of</span></span>(<span>self, interval)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def is_superset_of(self, interval):
+    if self.is_empty:
+        return False
+
+    u = self
+    v = Interval.parse(interval)
+
+    if v.is_empty:
+        return True
+
+    u0 = u.start
+    u1 = u.end
+    v0 = v.start
+    v1 = v.end
+
+    if u0 &gt; v0:
+        return False
+    elif u0 == v0 and u.start_open and not v.start_open:
+        return False
+
+    if u1 &lt; v1:
+        return False
+    elif u1 == v1 and u.end_open and not v.end_open:
+        return False
+
+    return True</code></pre>
+</details>
+</dd>
+<dt id="interval_util.interval.Interval.map"><code class="name flex">
+<span>def <span class="ident">map</span></span>(<span>self, f)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def map(self, f):
+    return Interval(f(self.start), f(self.end), start_open=self.start_open, end_open=self.end_open)</code></pre>
+</details>
+</dd>
+<dt id="interval_util.interval.Interval.offset"><code class="name flex">
+<span>def <span class="ident">offset</span></span>(<span>self, offset)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def offset(self, offset):
+    return Interval(self.start + offset, self.end + offset, start_open=self.start_open, end_open=self.end_open)</code></pre>
+</details>
+</dd>
+<dt id="interval_util.interval.Interval.pad"><code class="name flex">
+<span>def <span class="ident">pad</span></span>(<span>self, *amount, start=None, end=None)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def pad(self, *amount, start=None, end=None):
+    default = amount[0] if len(amount) != 0 else None
+
+    if self.is_negative_infinite:
+        start = self.start
+    else:
+        start = self.start - (start or default or 0)
+
+    if self.is_positive_infinite:
+        end = self.end
+    else:
+        end = self.end + (end or default or 0)
+
+    return Interval(start, end, start_open=self.start_open, end_open=self.end_open)</code></pre>
+</details>
+</dd>
+<dt id="interval_util.interval.Interval.partition"><code class="name flex">
+<span>def <span class="ident">partition</span></span>(<span>self, xs, start_open=None, end_open=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p><code>xs</code> are assumed to be in ascending order.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def partition(self, xs, start_open=None, end_open=None):
+    &#34;&#34;&#34;
+    `xs` are assumed to be in ascending order.
+    &#34;&#34;&#34;
+    xs = list(filter(lambda x: self.contains(x), xs))
+    len_xs = len(xs)
+    if len_xs == 0:
+        return [self]
+    intervals = []
+    i_last = len_xs - 1
+    x_prev = None
+    if end_open is not None:
+        start_open = not end_open
+    elif start_open is not None:
+        end_open = not start_open
+    else:
+        start_open = False
+        end_open = True
+    for i in range(len_xs + 1):
+        if i &lt;= i_last:
+            x = xs[i]
+        if i == 0:
+            d_start = self.start
+            d_start_open = self.start_open
+        else:
+            d_start = x_prev
+            d_start_open = start_open
+        if i == len_xs:
+            d_end = self.end
+            d_end_open = self.end_open
+        else:
+            d_end = x
+            d_end_open = end_open
+        d = Interval(d_start, d_end, start_open=d_start_open,
+                   end_open=d_end_open)
+        if not d.is_empty:
+            intervals.append(d)
+        x_prev = x
+    return intervals</code></pre>
+</details>
+</dd>
+<dt id="interval_util.interval.Interval.rest_to_negative_infinity"><code class="name flex">
+<span>def <span class="ident">rest_to_negative_infinity</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Return a interval from negative infinity to the start of this interval (non-inclusive).
+If this interval is empty, return an empty interval.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def rest_to_negative_infinity(self):
+    &#34;&#34;&#34;
+    Return a interval from negative infinity to the start of this interval (non-inclusive).
+    If this interval is empty, return an empty interval.
+    &#34;&#34;&#34;
+    warnings.warn(&#39;rest_to_negative_infinity() is deprecated, use get_lt() instead&#39;, DeprecationWarning)
+    return self.get_lt()</code></pre>
+</details>
+</dd>
+<dt id="interval_util.interval.Interval.rest_to_positive_infinity"><code class="name flex">
+<span>def <span class="ident">rest_to_positive_infinity</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Return a interval from the end of this interval (non-inclusive) to positive infinity.
+If this interval is empty, return an empty interval.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def rest_to_positive_infinity(self):
+    &#34;&#34;&#34;
+    Return a interval from the end of this interval (non-inclusive) to positive infinity.
+    If this interval is empty, return an empty interval.
+    &#34;&#34;&#34;
+    warnings.warn(&#39;rest_to_positive_infinity() is deprecated, use get_gt() instead&#39;, DeprecationWarning)
+    return self.get_gt()</code></pre>
+</details>
+</dd>
+<dt id="interval_util.interval.Interval.round"><code class="name flex">
+<span>def <span class="ident">round</span></span>(<span>self, method=&lt;built-in function round&gt;)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def round(self, method=round):
+    if self.is_empty:
+        return self
+    start = method(self.start) if not self.is_negative_infinite else self.start
+    end = method(self.end) if not self.is_positive_infinite else self.end
+    return Interval(start, end, start_open=self.start_open, end_open=self.end_open)</code></pre>
+</details>
+</dd>
+<dt id="interval_util.interval.Interval.to_str"><code class="name flex">
+<span>def <span class="ident">to_str</span></span>(<span>self, transformer=None, infinity_str=None, empty_str=None)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def to_str(self, transformer=None, infinity_str=None, empty_str=None):
+    if self.is_empty:
+        return empty_str or &#39;()&#39;
+
+    start_str = &#39;(&#39; if self.start_open else &#39;[&#39;
+    end_str = &#39;)&#39; if self.end_open else &#39;]&#39;
+
+    start = self.start
+    end = self.end
+
+    if start == end:
+        x = start
+        if callable(transformer):
+            x = transformer(x)
+        return &#39;{}{}{}&#39;.format(start_str, x, end_str)
+
+    if self.is_negative_infinite:
+        start = &#39;-&#39; + (infinity_str or &#39;inf&#39;)
+    elif callable(transformer):
+        start = transformer(start)
+
+    if self.is_positive_infinite:
+        end = infinity_str or &#39;inf&#39;
+    elif callable(transformer):
+        end = transformer(end)
+
+    return &#39;{}{}, {}{}&#39;.format(start_str, start, end, end_str)</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="interval_util" href="index.html">interval_util</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="interval_util.interval.Interval" href="#interval_util.interval.Interval">Interval</a></code></h4>
+<ul class="">
+<li><code><a title="interval_util.interval.Interval.as_closed" href="#interval_util.interval.Interval.as_closed">as_closed</a></code></li>
+<li><code><a title="interval_util.interval.Interval.as_closed_open" href="#interval_util.interval.Interval.as_closed_open">as_closed_open</a></code></li>
+<li><code><a title="interval_util.interval.Interval.as_open" href="#interval_util.interval.Interval.as_open">as_open</a></code></li>
+<li><code><a title="interval_util.interval.Interval.as_open_closed" href="#interval_util.interval.Interval.as_open_closed">as_open_closed</a></code></li>
+<li><code><a title="interval_util.interval.Interval.closed" href="#interval_util.interval.Interval.closed">closed</a></code></li>
+<li><code><a title="interval_util.interval.Interval.closed_open" href="#interval_util.interval.Interval.closed_open">closed_open</a></code></li>
+<li><code><a title="interval_util.interval.Interval.contains" href="#interval_util.interval.Interval.contains">contains</a></code></li>
+<li><code><a title="interval_util.interval.Interval.copy" href="#interval_util.interval.Interval.copy">copy</a></code></li>
+<li><code><a title="interval_util.interval.Interval.empty" href="#interval_util.interval.Interval.empty">empty</a></code></li>
+<li><code><a title="interval_util.interval.Interval.equals" href="#interval_util.interval.Interval.equals">equals</a></code></li>
+<li><code><a title="interval_util.interval.Interval.extended_to_negative_infinity" href="#interval_util.interval.Interval.extended_to_negative_infinity">extended_to_negative_infinity</a></code></li>
+<li><code><a title="interval_util.interval.Interval.extended_to_positive_infinity" href="#interval_util.interval.Interval.extended_to_positive_infinity">extended_to_positive_infinity</a></code></li>
+<li><code><a title="interval_util.interval.Interval.filter" href="#interval_util.interval.Interval.filter">filter</a></code></li>
+<li><code><a title="interval_util.interval.Interval.get_gt" href="#interval_util.interval.Interval.get_gt">get_gt</a></code></li>
+<li><code><a title="interval_util.interval.Interval.get_gte" href="#interval_util.interval.Interval.get_gte">get_gte</a></code></li>
+<li><code><a title="interval_util.interval.Interval.get_lt" href="#interval_util.interval.Interval.get_lt">get_lt</a></code></li>
+<li><code><a title="interval_util.interval.Interval.get_lte" href="#interval_util.interval.Interval.get_lte">get_lte</a></code></li>
+<li><code><a title="interval_util.interval.Interval.gt" href="#interval_util.interval.Interval.gt">gt</a></code></li>
+<li><code><a title="interval_util.interval.Interval.gte" href="#interval_util.interval.Interval.gte">gte</a></code></li>
+<li><code><a title="interval_util.interval.Interval.index_range" href="#interval_util.interval.Interval.index_range">index_range</a></code></li>
+<li><code><a title="interval_util.interval.Interval.inf" href="#interval_util.interval.Interval.inf">inf</a></code></li>
+<li><code><a title="interval_util.interval.Interval.infinite" href="#interval_util.interval.Interval.infinite">infinite</a></code></li>
+<li><code><a title="interval_util.interval.Interval.intersection" href="#interval_util.interval.Interval.intersection">intersection</a></code></li>
+<li><code><a title="interval_util.interval.Interval.intersects" href="#interval_util.interval.Interval.intersects">intersects</a></code></li>
+<li><code><a title="interval_util.interval.Interval.is_empty" href="#interval_util.interval.Interval.is_empty">is_empty</a></code></li>
+<li><code><a title="interval_util.interval.Interval.is_finite" href="#interval_util.interval.Interval.is_finite">is_finite</a></code></li>
+<li><code><a title="interval_util.interval.Interval.is_infinite" href="#interval_util.interval.Interval.is_infinite">is_infinite</a></code></li>
+<li><code><a title="interval_util.interval.Interval.is_negative_infinite" href="#interval_util.interval.Interval.is_negative_infinite">is_negative_infinite</a></code></li>
+<li><code><a title="interval_util.interval.Interval.is_point" href="#interval_util.interval.Interval.is_point">is_point</a></code></li>
+<li><code><a title="interval_util.interval.Interval.is_positive_infinite" href="#interval_util.interval.Interval.is_positive_infinite">is_positive_infinite</a></code></li>
+<li><code><a title="interval_util.interval.Interval.is_subset_of" href="#interval_util.interval.Interval.is_subset_of">is_subset_of</a></code></li>
+<li><code><a title="interval_util.interval.Interval.is_superset_of" href="#interval_util.interval.Interval.is_superset_of">is_superset_of</a></code></li>
+<li><code><a title="interval_util.interval.Interval.length" href="#interval_util.interval.Interval.length">length</a></code></li>
+<li><code><a title="interval_util.interval.Interval.lt" href="#interval_util.interval.Interval.lt">lt</a></code></li>
+<li><code><a title="interval_util.interval.Interval.lte" href="#interval_util.interval.Interval.lte">lte</a></code></li>
+<li><code><a title="interval_util.interval.Interval.map" href="#interval_util.interval.Interval.map">map</a></code></li>
+<li><code><a title="interval_util.interval.Interval.middle" href="#interval_util.interval.Interval.middle">middle</a></code></li>
+<li><code><a title="interval_util.interval.Interval.negative_infinite" href="#interval_util.interval.Interval.negative_infinite">negative_infinite</a></code></li>
+<li><code><a title="interval_util.interval.Interval.offset" href="#interval_util.interval.Interval.offset">offset</a></code></li>
+<li><code><a title="interval_util.interval.Interval.open" href="#interval_util.interval.Interval.open">open</a></code></li>
+<li><code><a title="interval_util.interval.Interval.open_closed" href="#interval_util.interval.Interval.open_closed">open_closed</a></code></li>
+<li><code><a title="interval_util.interval.Interval.pad" href="#interval_util.interval.Interval.pad">pad</a></code></li>
+<li><code><a title="interval_util.interval.Interval.parse" href="#interval_util.interval.Interval.parse">parse</a></code></li>
+<li><code><a title="interval_util.interval.Interval.parse_many" href="#interval_util.interval.Interval.parse_many">parse_many</a></code></li>
+<li><code><a title="interval_util.interval.Interval.partition" href="#interval_util.interval.Interval.partition">partition</a></code></li>
+<li><code><a title="interval_util.interval.Interval.point" href="#interval_util.interval.Interval.point">point</a></code></li>
+<li><code><a title="interval_util.interval.Interval.positive_infinite" href="#interval_util.interval.Interval.positive_infinite">positive_infinite</a></code></li>
+<li><code><a title="interval_util.interval.Interval.rest_to_negative_infinity" href="#interval_util.interval.Interval.rest_to_negative_infinity">rest_to_negative_infinity</a></code></li>
+<li><code><a title="interval_util.interval.Interval.rest_to_positive_infinity" href="#interval_util.interval.Interval.rest_to_positive_infinity">rest_to_positive_infinity</a></code></li>
+<li><code><a title="interval_util.interval.Interval.round" href="#interval_util.interval.Interval.round">round</a></code></li>
+<li><code><a title="interval_util.interval.Interval.to_str" href="#interval_util.interval.Interval.to_str">to_str</a></code></li>
+<li><code><a title="interval_util.interval.Interval.union" href="#interval_util.interval.Interval.union">union</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc"><cite>pdoc</cite> 0.9.1</a>.</p>
+</footer>
+</body>
+</html>
