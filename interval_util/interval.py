@@ -320,6 +320,8 @@ class Interval(Sequence):
         """
         Return a interval from the start of this interval to positive infinity.
         If this interval is empty, return an empty interval.
+
+        *Deprecated, use get_gte() instead.*
         """
         warnings.warn('extended_to_positive_infinity() is deprecated, use get_gte() instead', DeprecationWarning)
         return self.get_gte()
@@ -328,6 +330,8 @@ class Interval(Sequence):
         """
         Return a interval from the negative infinity to the end of this interval.
         If this interval is empty, return an empty interval.
+
+        *Deprecated, use get_lte() instead.*
         """
         warnings.warn('extended_to_negative_infinity() is deprecated, use get_lte() instead', DeprecationWarning)
         return self.get_lte()
@@ -336,6 +340,8 @@ class Interval(Sequence):
         """
         Return a interval from the end of this interval (non-inclusive) to positive infinity.
         If this interval is empty, return an empty interval.
+
+        *Deprecated, use get_gt() instead.*
         """
         warnings.warn('rest_to_positive_infinity() is deprecated, use get_gt() instead', DeprecationWarning)
         return self.get_gt()
@@ -344,6 +350,8 @@ class Interval(Sequence):
         """
         Return a interval from negative infinity to the start of this interval (non-inclusive).
         If this interval is empty, return an empty interval.
+
+        *Deprecated, use get_lt() instead.*
         """
         warnings.warn('rest_to_negative_infinity() is deprecated, use get_lt() instead', DeprecationWarning)
         return self.get_lt()
@@ -443,11 +451,17 @@ class Interval(Sequence):
 
     @staticmethod
     def positive_infinite(x, open=False):
+        """
+        *Deprecated, use gt() or gte() instead.*
+        """
         warnings.warn('positive_infinite() is deprecated, use gt() or gte() instead', DeprecationWarning)
         return Interval(x, math.inf, start_open=open, end_open=True)
 
     @staticmethod
     def negative_infinite(x, open=False):
+        """
+        *Deprecated, use t() or lte() instead.*
+        """
         warnings.warn('negative_infinite() is deprecated, use lt() or lte() instead', DeprecationWarning)
         return Interval(-math.inf, x, start_open=True, end_open=open)
 

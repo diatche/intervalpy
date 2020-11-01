@@ -17,7 +17,7 @@ pip3 install interval-util
 
 # Usage
 
-Have a look at the [documentation](doc/html/interval_util/index.html).
+Have a look at the [documentation](https://diatche.github.io/interval-util-py/).
 
 Basic usage:
 

@@ -348,6 +348,8 @@ class Interval(Sequence):
         &#34;&#34;&#34;
         Return a interval from the start of this interval to positive infinity.
         If this interval is empty, return an empty interval.
+
+        *Deprecated, use get_gte() instead.*
         &#34;&#34;&#34;
         warnings.warn(&#39;extended_to_positive_infinity() is deprecated, use get_gte() instead&#39;, DeprecationWarning)
         return self.get_gte()
@@ -356,6 +358,8 @@ class Interval(Sequence):
         &#34;&#34;&#34;
         Return a interval from the negative infinity to the end of this interval.
         If this interval is empty, return an empty interval.
+
+        *Deprecated, use get_lte() instead.*
         &#34;&#34;&#34;
         warnings.warn(&#39;extended_to_negative_infinity() is deprecated, use get_lte() instead&#39;, DeprecationWarning)
         return self.get_lte()
@@ -364,6 +368,8 @@ class Interval(Sequence):
         &#34;&#34;&#34;
         Return a interval from the end of this interval (non-inclusive) to positive infinity.
         If this interval is empty, return an empty interval.
+
+        *Deprecated, use get_gt() instead.*
         &#34;&#34;&#34;
         warnings.warn(&#39;rest_to_positive_infinity() is deprecated, use get_gt() instead&#39;, DeprecationWarning)
         return self.get_gt()
@@ -372,6 +378,8 @@ class Interval(Sequence):
         &#34;&#34;&#34;
         Return a interval from negative infinity to the start of this interval (non-inclusive).
         If this interval is empty, return an empty interval.
+
+        *Deprecated, use get_lt() instead.*
         &#34;&#34;&#34;
         warnings.warn(&#39;rest_to_negative_infinity() is deprecated, use get_lt() instead&#39;, DeprecationWarning)
         return self.get_lt()
@@ -471,11 +479,17 @@ class Interval(Sequence):
 
     @staticmethod
     def positive_infinite(x, open=False):
+        &#34;&#34;&#34;
+        *Deprecated, use gt() or gte() instead.*
+        &#34;&#34;&#34;
         warnings.warn(&#39;positive_infinite() is deprecated, use gt() or gte() instead&#39;, DeprecationWarning)
         return Interval(x, math.inf, start_open=open, end_open=True)
 
     @staticmethod
     def negative_infinite(x, open=False):
+        &#34;&#34;&#34;
+        *Deprecated, use t() or lte() instead.*
+        &#34;&#34;&#34;
         warnings.warn(&#39;negative_infinite() is deprecated, use lt() or lte() instead&#39;, DeprecationWarning)
         return Interval(-math.inf, x, start_open=True, end_open=open)
 
@@ -985,6 +999,8 @@ infinite = Interval(-math.inf, math.inf, start_open=True, end_open=True)</code><
         &#34;&#34;&#34;
         Return a interval from the start of this interval to positive infinity.
         If this interval is empty, return an empty interval.
+
+        *Deprecated, use get_gte() instead.*
         &#34;&#34;&#34;
         warnings.warn(&#39;extended_to_positive_infinity() is deprecated, use get_gte() instead&#39;, DeprecationWarning)
         return self.get_gte()
@@ -993,6 +1009,8 @@ infinite = Interval(-math.inf, math.inf, start_open=True, end_open=True)</code><
         &#34;&#34;&#34;
         Return a interval from the negative infinity to the end of this interval.
         If this interval is empty, return an empty interval.
+
+        *Deprecated, use get_lte() instead.*
         &#34;&#34;&#34;
         warnings.warn(&#39;extended_to_negative_infinity() is deprecated, use get_lte() instead&#39;, DeprecationWarning)
         return self.get_lte()
@@ -1001,6 +1019,8 @@ infinite = Interval(-math.inf, math.inf, start_open=True, end_open=True)</code><
         &#34;&#34;&#34;
         Return a interval from the end of this interval (non-inclusive) to positive infinity.
         If this interval is empty, return an empty interval.
+
+        *Deprecated, use get_gt() instead.*
         &#34;&#34;&#34;
         warnings.warn(&#39;rest_to_positive_infinity() is deprecated, use get_gt() instead&#39;, DeprecationWarning)
         return self.get_gt()
@@ -1009,6 +1029,8 @@ infinite = Interval(-math.inf, math.inf, start_open=True, end_open=True)</code><
         &#34;&#34;&#34;
         Return a interval from negative infinity to the start of this interval (non-inclusive).
         If this interval is empty, return an empty interval.
+
+        *Deprecated, use get_lt() instead.*
         &#34;&#34;&#34;
         warnings.warn(&#39;rest_to_negative_infinity() is deprecated, use get_lt() instead&#39;, DeprecationWarning)
         return self.get_lt()
@@ -1108,11 +1130,17 @@ infinite = Interval(-math.inf, math.inf, start_open=True, end_open=True)</code><
 
     @staticmethod
     def positive_infinite(x, open=False):
+        &#34;&#34;&#34;
+        *Deprecated, use gt() or gte() instead.*
+        &#34;&#34;&#34;
         warnings.warn(&#39;positive_infinite() is deprecated, use gt() or gte() instead&#39;, DeprecationWarning)
         return Interval(x, math.inf, start_open=open, end_open=True)
 
     @staticmethod
     def negative_infinite(x, open=False):
+        &#34;&#34;&#34;
+        *Deprecated, use t() or lte() instead.*
+        &#34;&#34;&#34;
         warnings.warn(&#39;negative_infinite() is deprecated, use lt() or lte() instead&#39;, DeprecationWarning)
         return Interval(-math.inf, x, start_open=True, end_open=open)
 
@@ -1450,13 +1478,16 @@ def lte(x):
 <span>def <span class="ident">negative_infinite</span></span>(<span>x, open=False)</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p><em>Deprecated, use t() or lte() instead.</em></p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">@staticmethod
 def negative_infinite(x, open=False):
+    &#34;&#34;&#34;
+    *Deprecated, use t() or lte() instead.*
+    &#34;&#34;&#34;
     warnings.warn(&#39;negative_infinite() is deprecated, use lt() or lte() instead&#39;, DeprecationWarning)
     return Interval(-math.inf, x, start_open=True, end_open=open)</code></pre>
 </details>
@@ -1553,13 +1584,16 @@ def point(x):
 <span>def <span class="ident">positive_infinite</span></span>(<span>x, open=False)</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p><em>Deprecated, use gt() or gte() instead.</em></p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">@staticmethod
 def positive_infinite(x, open=False):
+    &#34;&#34;&#34;
+    *Deprecated, use gt() or gte() instead.*
+    &#34;&#34;&#34;
     warnings.warn(&#39;positive_infinite() is deprecated, use gt() or gte() instead&#39;, DeprecationWarning)
     return Interval(x, math.inf, start_open=open, end_open=True)</code></pre>
 </details>
@@ -1826,7 +1860,8 @@ def middle(self):
 </code></dt>
 <dd>
 <div class="desc"><p>Return a interval from the negative infinity to the end of this interval.
-If this interval is empty, return an empty interval.</p></div>
+If this interval is empty, return an empty interval.</p>
+<p><em>Deprecated, use get_lte() instead.</em></p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -1835,6 +1870,8 @@ If this interval is empty, return an empty interval.</p></div>
     &#34;&#34;&#34;
     Return a interval from the negative infinity to the end of this interval.
     If this interval is empty, return an empty interval.
+
+    *Deprecated, use get_lte() instead.*
     &#34;&#34;&#34;
     warnings.warn(&#39;extended_to_negative_infinity() is deprecated, use get_lte() instead&#39;, DeprecationWarning)
     return self.get_lte()</code></pre>
@@ -1845,7 +1882,8 @@ If this interval is empty, return an empty interval.</p></div>
 </code></dt>
 <dd>
 <div class="desc"><p>Return a interval from the start of this interval to positive infinity.
-If this interval is empty, return an empty interval.</p></div>
+If this interval is empty, return an empty interval.</p>
+<p><em>Deprecated, use get_gte() instead.</em></p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -1854,6 +1892,8 @@ If this interval is empty, return an empty interval.</p></div>
     &#34;&#34;&#34;
     Return a interval from the start of this interval to positive infinity.
     If this interval is empty, return an empty interval.
+
+    *Deprecated, use get_gte() instead.*
     &#34;&#34;&#34;
     warnings.warn(&#39;extended_to_positive_infinity() is deprecated, use get_gte() instead&#39;, DeprecationWarning)
     return self.get_gte()</code></pre>
@@ -2219,7 +2259,8 @@ must be supplied, which returns a float.</p>
 </code></dt>
 <dd>
 <div class="desc"><p>Return a interval from negative infinity to the start of this interval (non-inclusive).
-If this interval is empty, return an empty interval.</p></div>
+If this interval is empty, return an empty interval.</p>
+<p><em>Deprecated, use get_lt() instead.</em></p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -2228,6 +2269,8 @@ If this interval is empty, return an empty interval.</p></div>
     &#34;&#34;&#34;
     Return a interval from negative infinity to the start of this interval (non-inclusive).
     If this interval is empty, return an empty interval.
+
+    *Deprecated, use get_lt() instead.*
     &#34;&#34;&#34;
     warnings.warn(&#39;rest_to_negative_infinity() is deprecated, use get_lt() instead&#39;, DeprecationWarning)
     return self.get_lt()</code></pre>
@@ -2238,7 +2281,8 @@ If this interval is empty, return an empty interval.</p></div>
 </code></dt>
 <dd>
 <div class="desc"><p>Return a interval from the end of this interval (non-inclusive) to positive infinity.
-If this interval is empty, return an empty interval.</p></div>
+If this interval is empty, return an empty interval.</p>
+<p><em>Deprecated, use get_gt() instead.</em></p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -2247,6 +2291,8 @@ If this interval is empty, return an empty interval.</p></div>
     &#34;&#34;&#34;
     Return a interval from the end of this interval (non-inclusive) to positive infinity.
     If this interval is empty, return an empty interval.
+
+    *Deprecated, use get_gt() instead.*
     &#34;&#34;&#34;
     warnings.warn(&#39;rest_to_positive_infinity() is deprecated, use get_gt() instead&#39;, DeprecationWarning)
     return self.get_gt()</code></pre>
