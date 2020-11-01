@@ -1,0 +1,14 @@
+{
+    "python.pythonPath": ".venv/bin/python",
+    "python.testing.pytestPath": ".venv/bin/pytest",
+    "python.testing.pytestArgs": [
+        "test",
+        "-l", // show locals in tracebacks
+        "-x", // exit instantly on first error or failed test
+        "--ff", // run all tests but run the last failures first
+        "--color=auto" // color terminal output (yes/no/auto)
+    ],
+    "python.testing.unittestEnabled": false,
+    "python.testing.nosetestsEnabled": false,
+    "python.testing.pytestEnabled": true
+}

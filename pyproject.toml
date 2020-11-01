@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "interval-util"
+version = "0.1.0"
+description = "An interval set utility library."
+
+license = "MIT"
+
+authors = [
+    "Pavel Diatchenko <diatche@gmail.com>"
+]
+
+readme = 'README.md'
+
+repository = "https://github.com/diatche/interval-util-py"
+homepage = "https://github.com/diatche/interval-util-py"
+
+keywords = ['interval', 'set']
+
+[tool.poetry.dependencies]
+python = ">=3.5,<4"
+toml = "^0.9"
+
+[tool.poetry.dev-dependencies]
+pytest = "~5"
+pytest-cov = "~2"
