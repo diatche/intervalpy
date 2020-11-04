@@ -4,8 +4,8 @@ import os
 import sys
 
 module_dir = os.path.dirname(__file__)
-sys.path.append(os.path.join(module_dir, '..', 'interval_util'))
-from interval_util import Interval
+sys.path.append(os.path.join(module_dir, '..', 'intervalpy'))
+from intervalpy import Interval
 
 def test_intersection():
     # closed, closed
