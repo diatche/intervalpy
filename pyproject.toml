@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "interval-util"
+name = "intervalpy"
 version = "0.1.0"
 description = "An interval set utility library."
 
@@ -11,8 +11,8 @@ authors = [
 
 readme = 'README.md'
 
-repository = "https://github.com/diatche/interval-util-py"
-homepage = "https://github.com/diatche/interval-util-py"
+repository = "https://github.com/diatche/intervalpy"
+homepage = "https://github.com/diatche/intervalpy"
 
 keywords = ['interval', 'set']
 

@@ -1,6 +1,6 @@
-# interval-util
+# intervalpy
 
-![Tests](https://github.com/diatche/interval-util-py/workflows/Tests/badge.svg)
+![Tests](https://github.com/diatche/intervalpy/workflows/Tests/badge.svg)
 
 An interval set utility library.
 
@@ -9,18 +9,18 @@ An interval set utility library.
 With [poetry](https://python-poetry.org):
 
 ```bash
-poetry add interval-util
+poetry add intervalpy
 ```
 
 Or with pip:
 
 ```
-pip3 install interval-util
+pip3 install intervalpy
 ```
 
 # Usage
 
-Have a look at the [documentation](https://diatche.github.io/interval-util-py/).
+Have a look at the [documentation](https://diatche.github.io/intervalpy/).
 
 Basic usage:
 
