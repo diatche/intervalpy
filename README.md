@@ -1,4 +1,7 @@
 # interval-util
+
+![Tests](https://github.com/diatche/interval-util-py/workflows/Tests/badge.svg)
+
 An interval set utility library.
 
 # Installation
