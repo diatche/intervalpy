@@ -25,7 +25,7 @@ Have a look at the [documentation](https://diatche.github.io/intervalpy/).
 Basic usage:
 
 ```python
-from interval_util import Interval
+from intervalpy import Interval
 
 digits = Interval(0, 10, end_open=True)
 ten_and_up = digits.get_gt()
