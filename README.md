@@ -27,10 +27,18 @@ Basic usage:
 ```python
 from intervalpy import Interval
 
+# Create a set [0, 10), i.e. a set satisfying: >= 0, < 10.
 digits = Interval(0, 10, end_open=True)
+
+# Get the set (10, ∞), i.e. a set satisfying: > 10
 ten_and_up = digits.get_gt()
+
+# Get the set [0, ∞), i.e. a set satisfying: >= 0
 positive_numbers = digits.get_gte()
+
+# Perform set comparison
 assert ten_and_up.is_subset_of(positive_numbers)
 
+# Equality is by value
 assert positive_numbers.intersection(Interval.lt(10)) == digits
 ```
